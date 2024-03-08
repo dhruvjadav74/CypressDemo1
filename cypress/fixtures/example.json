@@ -1,0 +1,12 @@
+{
+  "UserData":{
+    "firstname":"dd",
+    "lastname":"test",
+    "telephone":"999999999",
+    "email": "pptest123@mailinator.com",
+    "password": "Simform@123",
+    "confirmpass":"Simform@123",
+    "wrongpassword": "Simform@1234",
+    "wrongemail":"123SSOO@gmail.com"
+  }
+}
