@@ -25,7 +25,6 @@ describe('Login Page', () => {
       },
       body: { userid: 2905 }
     }).then(res => {
-    
     });
 
   })
