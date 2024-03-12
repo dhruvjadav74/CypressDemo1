@@ -26,6 +26,9 @@ describe('Login Page', () => {
         cy.get('button[id="dwnBtn"]').should('be.visible').click();
         cy.wait(5000)
         cy.get('.success ').should('contain', 'Download completed!')
+        
+        cy.injectAxe(); 
+        cy.checkA11y();
     })
 
 })
