@@ -31,7 +31,7 @@ describe('Login Page', () => {
         cy.get('input[name="password"]').should('be.visible').type(UserData.password);
         cy.get('input[name="confirm"]').should('be.visible').type(UserData.confirmpass);
         cy.get('label[for="input-agree"]').should('be.visible').click();
-        cy.get('input[type="submit"]').should('be.visible').click;
+        cy.get('input[type="submit"]').should('be.visible').click();
         cy.get('.alert-dismissible').should('be.visible');
     })
     
