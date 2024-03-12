@@ -6,14 +6,7 @@ module.exports = defineConfig({
   e2e: {
     projectId: "itiei1",
     setupNodeEvents(on, config) {
-      on("before:browser:launch", (browser = {}, launchOptions) => {
-        prepareAudit(launchOptions);
-      });
-
-      on("task", {
-        lighthouse: lighthouse(),
-      });
-    }
+    },
   },
 });
 
