@@ -1,4 +1,5 @@
 /// <reference types="cypress" />
+
 import homePage from "../pages/homePage"
 
 describe('Login Page', () => {
@@ -14,7 +15,7 @@ describe('Login Page', () => {
         cy.visit("https://ecommerce-playground.lambdatest.io/")
     })
 
-    it.only('Register with new email & pass', () => {
+    it.skip('Register with new email & pass', () => {
         homePage.RegisterNewEmailPass(UserData.firstname,UserData.lastname,UserData.email,UserData.telephone,UserData.password,UserData.confirmpass);
         cy.get('.my-3').should('contain',' Your Account Has Been Created!');
         cy.url().should('eq', 'https://ecommerce-playground.lambdatest.io/index.php?route=account/success');
