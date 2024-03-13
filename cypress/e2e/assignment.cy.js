@@ -1,21 +1,20 @@
 /// <reference types="cypress" />
 
 import homePage from "../pages/homePage"
+import main from "../pages/main"
 
 describe('Login Page', () => {
     let UserData;
-    before(function () {
-        cy.fixture('example.json').then(data => {
-            UserData = data.UserData;
-        })
-    })
+    before(async function () {
+        UserData = await main.LoadUserData();
+    });
 
     beforeEach(function () {
-        cy.viewport(1920, 1080);
-        cy.visit("https://ecommerce-playground.lambdatest.io/")
+        cy.visit('/');
+        main.SetViewPort(1920, 1080);
     })
 
-    it.skip('Register with new email & pass', () => {
+    it('Register with new email & pass', () => {
         homePage.NavigateToRegisterPage();
         homePage.RegisterNewEmailPass(UserData.firstname,UserData.lastname,UserData.email,UserData.telephone,UserData.password,UserData.confirmpass);
         cy.get('.my-3').should('contain',' Your Account Has Been Created!');
@@ -45,14 +44,12 @@ describe('Login Page', () => {
     it('Forgot Password with valid email', () => {
         homePage.NavigateToLoginPage();
         homePage.ForgotPassword(UserData.email); 
-        cy.get('.float-right .btn-primary').should('be.visible').click();
         cy.get('div[class="alert alert-success alert-dismissible"]').should('contain',' An email with a confirmation link has been sent your email address.');
     })
 
     it('Forgot Password with invalid email', () => {
         homePage.NavigateToLoginPage();
         homePage.ForgotPassword(UserData.wrongemail); 
-        cy.get('.float-right .btn-primary').should('be.visible').click();
         cy.get('div[class="alert alert-danger alert-dismissible"]').should('contain',' Warning: The E-Mail Address was not found in our records, please try again!');
     })
 })
