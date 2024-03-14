@@ -21,7 +21,7 @@ describe('Login Page', () => {
         cy.url().should('eq', 'https://ecommerce-playground.lambdatest.io/index.php?route=account/success');
     })
     
-    it('Register with existing email & pass', () => {
+    it('Register with existing email & pass  ', () => {
         homePage.NavigateToRegisterPage();
         homePage.RegisterExistingEmailPass(UserData.firstname,UserData.lastname,UserData.email,UserData.telephone,UserData.password,UserData.confirmpass);
         cy.get('.alert-dismissible').should('be.visible');
