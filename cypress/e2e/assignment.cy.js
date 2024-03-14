@@ -51,5 +51,6 @@ describe('Login Page', () => {
         homePage.NavigateToLoginPage();
         homePage.ForgotPassword(UserData.wrongemail); 
         cy.get('div[class="alert alert-danger alert-dismissible"]').should('contain',' Warning: The E-Mail Address was not found in our records, please try again!');
+        
     })
 })
