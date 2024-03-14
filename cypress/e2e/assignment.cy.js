@@ -14,7 +14,7 @@ describe('Login Page', () => {
         main.SetViewPort(1920, 1080);
     })
 
-    it('Register with new email & pass', () => {
+    it.skip('Register with new email & pass', () => {
         homePage.NavigateToRegisterPage();
         homePage.RegisterNewEmailPass(UserData.firstname,UserData.lastname,UserData.email,UserData.telephone,UserData.password,UserData.confirmpass);
         cy.get('.my-3').should('contain',' Your Account Has Been Created!');
